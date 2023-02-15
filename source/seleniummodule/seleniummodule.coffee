@@ -21,4 +21,5 @@ export initialize = ->
     service = new firefox.ServiceBuilder(geckodriverPath)
     driver = new Builder().forBrowser('firefox').setChromeService(service).build()
 
+
     return
