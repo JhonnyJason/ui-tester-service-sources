@@ -1,7 +1,8 @@
 module.exports = {
     getDependencies: () => {
         return {
-	    "thingy-sci-base":"^0.0.4"
+            "bufferutil": "^4.0.7",
+            "utf-8-validate": "^6.0.2"
         }
     }
 }
