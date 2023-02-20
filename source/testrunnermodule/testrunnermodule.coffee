@@ -1,17 +1,18 @@
 ############################################################
 #region debug
 import { createLogFunctions } from "thingy-debug"
-{log, olog} = createLogFunctions("startupmodule")
+{log, olog} = createLogFunctions("testrunnermodule")
 #endregion
 
-
 ############################################################
-import { findAllTests } from "./testfindermodule.js"
-import { runAllTests } from "./testrunnermodule.js"
-
-############################################################
-export serviceStartup = ->
-    log "startup"
-    allTests = await findAllTests()
-    await runAllTests(allTests)
+export initialize = ->
+    log "initialize"
+    #Implement or Remove :-)
     return
+
+############################################################
+export runAllTests = (testPaths) ->
+    log "runAllTests"
+    olog {testPaths}
+    return
+
