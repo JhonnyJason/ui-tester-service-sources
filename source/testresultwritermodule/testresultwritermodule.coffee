@@ -51,7 +51,7 @@ export writeSuccess = (resultPath) ->
 
     successFileString = JSON.stringify(obj, null, 4)
     successFilePath = pth.resolve(resultPath, "success.json")
-    fs.writeFileSync(successFileString, successFilePath)
+    fs.writeFileSync(successFilePath, successFileString)
     return
 
 export writeError = (resultPath, error) ->
@@ -65,7 +65,7 @@ export writeError = (resultPath, error) ->
 
     errorFileString = JSON.stringify(obj, null, 4)
     errorFilePath = pth.resolve(resultPath, "error.json")
-    fs.writeFileSync(errorFileString, errorFilePath)
+    fs.writeFileSync(errorFilePath, errorFileString )
     return
 
 ############################################################
