@@ -27,7 +27,7 @@ runTest = (path) ->
     { testName, run } = await import(### webpackIgnore: true ###path)
     resultPath = resultWriter.prepareResultDir(testName)
     olog { testName }
-    olog {resultPath}
+    olog { resultPath }
 
     { browserUtils, resultUtils } = await selenium.getUtilitiesForTest(resultPath)
     
@@ -39,11 +39,9 @@ runTest = (path) ->
         log "fail!" 
         log err
         resultWriter.writeError(resultPath, err)
+    ## For some funny reason this fails - as if we donot have to quit the browser at all...
     # finally
-    #     try
-    #         await browserUtils.browser.quit()
-    #         await utl.waitMS(500)
-    #     catch err then log err
+    #     await browserUtils.browser.quit()
     return
 
 

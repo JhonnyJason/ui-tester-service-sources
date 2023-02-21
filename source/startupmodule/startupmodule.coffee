@@ -12,6 +12,10 @@ import { runAllTests } from "./testrunnermodule.js"
 ############################################################
 export serviceStartup = ->
     log "startup"
-    allTests = await findAllTests()
-    await runAllTests(allTests)
+    try
+        allTests = await findAllTests()
+        await runAllTests(allTests)
+    catch err 
+        log err 
+        process.exit(-1)
     return
