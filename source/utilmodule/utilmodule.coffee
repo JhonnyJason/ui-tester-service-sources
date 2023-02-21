@@ -24,3 +24,8 @@ export isFile = (path) ->
     catch err
         ## probably does not exist
         return false
+
+############################################################
+export waitMS = (timeMS)->
+    return new Promise (resolve, reject) ->
+        setTimeout(resolve, timeMS)
